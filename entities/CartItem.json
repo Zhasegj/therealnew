@@ -1,0 +1,31 @@
+{
+  "name": "CartItem",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User who added item"
+    },
+    "trip_id": {
+      "type": "string",
+      "description": "Reference to the trip"
+    },
+    "departure_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "travelers_count": {
+      "type": "number",
+      "default": 1
+    },
+    "unit_price": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "user_email",
+    "trip_id",
+    "travelers_count",
+    "unit_price"
+  ]
+}

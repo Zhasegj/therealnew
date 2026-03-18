@@ -1,0 +1,132 @@
+{
+  "name": "Trip",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Trip name"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination location"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full trip description"
+    },
+    "short_description": {
+      "type": "string",
+      "description": "Brief summary for cards"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price per person"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "USD",
+        "MXN"
+      ],
+      "default": "USD",
+      "description": "Price currency"
+    },
+    "duration_days": {
+      "type": "number",
+      "description": "Trip duration in days"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "adventure",
+        "relaxation",
+        "cultural",
+        "beach",
+        "mountain",
+        "city",
+        "cruise"
+      ],
+      "description": "Trip category"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Main trip image"
+    },
+    "gallery": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional images"
+    },
+    "itinerary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "included": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What's included"
+    },
+    "not_included": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What's not included"
+    },
+    "available_dates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Available departure dates"
+    },
+    "max_travelers": {
+      "type": "number",
+      "description": "Maximum group size"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Average rating"
+    },
+    "reviews_count": {
+      "type": "number",
+      "description": "Number of reviews"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "draft",
+        "sold_out"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "title",
+    "destination",
+    "price",
+    "duration_days"
+  ]
+}

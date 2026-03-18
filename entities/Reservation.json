@@ -1,0 +1,84 @@
+{
+  "name": "Reservation",
+  "type": "object",
+  "properties": {
+    "trip_id": {
+      "type": "string",
+      "description": "Reference to the trip"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "User who made the reservation"
+    },
+    "departure_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Selected departure date"
+    },
+    "travelers_count": {
+      "type": "number",
+      "description": "Number of travelers"
+    },
+    "travelers_info": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "full_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "date_of_birth": {
+            "type": "string"
+          },
+          "passport_number": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "total_price": {
+      "type": "number",
+      "description": "Total reservation price"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "cancelled",
+        "completed"
+      ],
+      "default": "pending"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "paid",
+        "refunded"
+      ],
+      "default": "pending"
+    },
+    "special_requests": {
+      "type": "string",
+      "description": "Any special requests"
+    },
+    "booking_reference": {
+      "type": "string",
+      "description": "Unique booking reference"
+    }
+  },
+  "required": [
+    "trip_id",
+    "user_email",
+    "departure_date",
+    "travelers_count",
+    "total_price"
+  ]
+}
